@@ -17,3 +17,12 @@ form.addEventListener('submit', function (e) {
   text = '';
   showLi();
 });
+function showLi() {
+  list.innerHTML = '';
+  task.forEach(function (t) {
+    const li = document.createElement('li');
+    li.textContent = `${t.tekst}`;
+    li.classList.add('list-box');
+    list.appendChild(li);
+  });
+}
