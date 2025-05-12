@@ -3,18 +3,33 @@
   padding: 0;
 }
 body {
-  background-color: rgb(134, 134, 209);
+  background-color: #6495ed;
   display: flex;
   justify-content: center;
 }
-input {
+.form {
+  margin-top: 15%;
+}
+.input {
   width: 420px;
   height: 70px;
-  margin-top: 20%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border: none;
   font-size: 20px;
   padding-left: 30px;
   font-family: sans-serif;
+}
+.list-box {
+  align-content: center;
+  width: 420px;
+  height: 70px;
+  border: none;
+  font-size: 20px;
+  padding-left: 30px;
+  font-family: sans-serif;
+  background-color: #add8e6;
+  color: red;
+  list-style-type: none;
+  border-top: 3px dashed rgb(255, 0, 0);
 }
