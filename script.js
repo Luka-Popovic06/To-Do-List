@@ -7,3 +7,13 @@ input.addEventListener('input', function (e) {
   text = e.target.value;
 });
 let task = [];
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const newTask = {
+    tekst: text,
+  };
+  task.push(newTask);
+  input.value = '';
+  text = '';
+  showLi();
+});
