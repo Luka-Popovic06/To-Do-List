@@ -21,15 +21,31 @@ body {
   font-family: sans-serif;
 }
 .list-box {
-  align-content: center;
-  width: 420px;
+  align-items: center;
+  width: 400px;
   height: 70px;
   border: none;
   font-size: 20px;
   padding-left: 30px;
+  padding-right: 20px;
   font-family: sans-serif;
   background-color: #add8e6;
   color: red;
   list-style-type: none;
   border-top: 3px dashed rgb(255, 0, 0);
+  display: flex;
+  position: relative;
+}
+.button {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  right: 20px;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  display: none;
 }
