@@ -43,9 +43,15 @@ body {
   position: absolute;
   top: 24px;
   right: 20px;
+  background-color: #add8e6;
+  border: none;
 }
 .icon {
   width: 20px;
   height: 20px;
+  display: none;
+  color: aquamarine;
+}
+.hidden {
   display: none;
 }
