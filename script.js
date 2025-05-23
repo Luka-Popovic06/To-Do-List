@@ -42,6 +42,25 @@ function showLi() {
       showLi();
     });
 
+    const check = document.createElement('input');
+    check.setAttribute('type', 'checkbox');
+    check.classList.add('checkbox');
+    check.addEventListener('input', function () {
+      if (check.checked) {
+        //check.style.backgroundColor = 'green';
+        li.style.color = 'gray';
+        li.style.textDecoration = 'line-through';
+        check.style.accentColor = 'gray';
+        li.style.borderTopColor = 'gray';
+      } else {
+        //check.style.backgroundColor = 'red';
+        li.style.color = 'red';
+        li.style.textDecoration = 'none';
+        li.style.borderTopColor = 'red';
+      }
+    });
+
+    li.appendChild(check);
     li.appendChild(btn);
     list.appendChild(li);
   });
