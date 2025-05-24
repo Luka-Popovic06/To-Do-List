@@ -13,6 +13,7 @@ form.addEventListener('submit', function (e) {
   const newTask = {
     id: crypto.randomUUID(),
     tekst: text,
+    checked: false,
   };
   task.push(newTask);
   input.value = '';
@@ -21,6 +22,7 @@ form.addEventListener('submit', function (e) {
 });
 function showLi() {
   list.innerHTML = '';
+
   task.forEach(function (t) {
     const li = document.createElement('li');
     li.id = t.id;
@@ -45,20 +47,29 @@ function showLi() {
     const check = document.createElement('input');
     check.setAttribute('type', 'checkbox');
     check.classList.add('checkbox');
-    check.addEventListener('input', function () {
-      if (check.checked) {
-        //check.style.backgroundColor = 'green';
-        li.style.color = 'gray';
-        li.style.textDecoration = 'line-through';
-        check.style.accentColor = 'gray';
-        li.style.borderTopColor = 'gray';
-      } else {
-        //check.style.backgroundColor = 'red';
-        li.style.color = 'red';
-        li.style.textDecoration = 'none';
-        li.style.borderTopColor = 'red';
+
+    check.addEventListener('input', function (e) {
+      if (e.target.checked) {
+        if (t.checked === false) {
+          t.checked = true;
+        } else if (t.checked === true) {
+          t.checked = false;
+        }
       }
+
+      showLi();
     });
+    if (t.checked === true) {
+      li.style.color = 'gray';
+      li.style.textDecoration = 'line-through';
+      //check.style.accentColor = 'gray';
+      li.style.borderTopColor = 'gray';
+    } else {
+      li.style.color = 'red';
+      li.style.textDecoration = 'none';
+
+      li.style.borderTopColor = 'red';
+    }
 
     li.appendChild(check);
     li.appendChild(btn);
