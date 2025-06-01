@@ -47,9 +47,7 @@ body {
   border: none;
 }
 .icon {
-  width: 20px;
-  height: 20px;
-  display: none;
+  color: red;
 }
 .checkbox {
   position: absolute;
@@ -59,6 +57,17 @@ body {
   width: 20px;
   height: 20px;
   cursor: pointer;
+  accent-color: gray;
+}
+.color-gray {
+  color: gray;
+  text-decoration: line-through;
+  border-top-color: gray;
+}
+.color-red {
+  color: red;
+  text-decoration: none;
+  border-top-color: red;
 }
 .hidden {
   display: none;
