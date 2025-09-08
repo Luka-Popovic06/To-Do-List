@@ -8,13 +8,26 @@ input.addEventListener('input', function (e) {
   text = e.target.value;
 });
 let task = [];
+/*class TaskManager {
+  constructor() {
+    this.array = [];
+  }
+}*/
+class NewTask {
+  constructor(id, tekst, checked) {
+    this.id = id;
+    this.tekst = tekst;
+    this.checked = checked;
+  }
+  changeIscheck() {
+    this.checked = !this.checked;
+  }
+}
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-  const newTask = {
-    id: crypto.randomUUID(),
-    tekst: text,
-    checked: false,
-  };
+  const newTask = new NewTask(crypto.randomUUID(), text, false);
+  console.log(newTask);
   task.push(newTask);
   input.value = '';
   text = '';
@@ -60,3 +73,27 @@ list.addEventListener('click', function (e) {
   }
   showLi();
 });
+function testCreator() {
+  let a = '';
+  const getA = () => a;
+  return { getA };
+}
+const test1 = testCreator();
+const test2 = testCreator();
+
+class Test {
+  constructor() {
+    this.a = '';
+  }
+  getA() {
+    return this.a;
+  }
+}
+const test3 = new Test();
+const test4 = new Test();
+console.log('test1', test1);
+console.log('test 2', test2);
+console.log('test3', test3);
+console.log('test 4', test4);
+const array = [];
+console.log(array);
